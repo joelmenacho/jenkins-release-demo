@@ -1,12 +1,13 @@
 pipeline {
+
     agent {
-        any {
+        docker {
             image 'santiluis/jenkinsrelease:1.0.0'
-            args '-v /var/run/docker.sock:/var/run/docker.sock'
         }
     }
 
     stages {
+
         stage('Checkout') {
             steps {
                 git branch: 'main', url: 'https://github.com/lesantivanez/jenkins-release-demo.git'
@@ -16,7 +17,7 @@ pipeline {
         stage('Build') {
             steps {
                 sh 'echo "Compilando aplicación..."'
-                sh 'docker version'
+                sh 'echo "Docker NO se usa en este entorno (Windows Desktop)"'
             }
         }
 
