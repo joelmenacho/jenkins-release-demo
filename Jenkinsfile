@@ -1,7 +1,7 @@
 pipeline {
     agent {
         docker {
-            image 'santiluis/jenkins-zip:1.0.0'
+            image 'santiluis/jenkins-unzip:TAG'
         }
     }
 
